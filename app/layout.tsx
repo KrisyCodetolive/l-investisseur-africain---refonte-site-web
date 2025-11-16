@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-black h-dvh pl-[360px] pr-[360px]`}
+        className={`bg-black h-dvh pl-[260px] pr-[260px]`}
       >
         {children}
       </body>
