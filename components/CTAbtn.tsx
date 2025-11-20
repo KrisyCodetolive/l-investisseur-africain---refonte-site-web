@@ -9,8 +9,8 @@ type BtnPros = {
 export default function Btn({ font , style }: BtnPros) {
   return (
     <GlareHover
-      className={`${font} ${style} px-[30px] py-2.5 text-[25px] bg-init rounded-full  
-                  duration-300 ease-in cursor-pointer 
+      className={`${font} ${style}px-[30px] py-2.5 text-[25px] bg-init rounded-full  
+                  duration-300 ease-in cursor-pointer opacity-100
                   `}
       style={{
         boxShadow: "-11px 20px 101.09px rgba(255,230,136,0.67)",
