@@ -4,6 +4,7 @@ import { h, j, f } from "../utils/PathPolice";
 import Btn from "../components/CTAbtn";
 import { gsap } from "gsap";
 import SplitText from "../components/SplitText";
+import Carte from "@/components/Carte";
 
 export default function Home() {
   const bgRef = useRef(null);
@@ -12,7 +13,7 @@ export default function Home() {
   const navItemsRef = useRef<HTMLUListElement>(null);
   const btnRef = useRef<HTMLDivElement>(null);
 
-
+  // Animation
   useEffect(() => {
     //animation bg
     gsap.fromTo(
@@ -33,7 +34,7 @@ export default function Home() {
     //animation btnCta
     gsap.from(".CTA", {
       opacity: 0,
-      y:-60,
+      y: -60,
       duration: 1.8,
       ease: "power3.out",
     });
@@ -48,8 +49,8 @@ export default function Home() {
       delay: 0.2,        // léger délai si tu veux
     });
 
-      //animation nav
-  if (logoRef.current) {
+    //animation nav
+    if (logoRef.current) {
       gsap.from(logoRef.current, { x: 5, opacity: 0, duration: 1, ease: "power3.out" });
     }
 
@@ -108,7 +109,7 @@ export default function Home() {
         <div className="absolute flex flex-col gap-20 inset-0 flex flex-col z-50 w-full h-full  pt-8 overflow-hidden">
           <header className=" w-full h-[100px]  gap-10 flex justify-between px-10">
             <img
-            ref={logoRef}
+              ref={logoRef}
               src="/assets/logo.png"
               alt="logo"
               className="w-[200px] h-[105px] translate-x-[100px] logo"
@@ -122,11 +123,12 @@ export default function Home() {
                 <li>mon parcours</li>
                 <li>nos projets</li>
                 <li>club business</li>
+
               </ul>
             </div>
             <div className="h-full  flex items-center">
               <div
-              ref={btnRef}
+                ref={btnRef}
                 className="flex text-[16px] translate-x-[-170px] gap-2 items-center ${h} h-14 p-3  rounded-[55px] cursor-pointer btn"
                 style={{
                   background:
@@ -153,9 +155,9 @@ export default function Home() {
             </span>
 
             <div className="CTA translate-y-[-133px]">
-                <Btn font={h.className} style="" />
+              <Btn font={h.className} style="" />
             </div>
-            
+
 
             <div className="flex justify-center w-full relative z-[-10]">
               <img
@@ -172,7 +174,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <Btn font={h.className} /> */}
+
+      {/* social proof */}
+      <section className="w-full h-auto flex justify-center items-center mt-20 gap-5">
+        <Carte>
+          <span className="text-[50px]">+10 ans</span>
+          <span className="text-[23px]">
+            expérience dans <span className="text-init">le business</span>
+          </span>
+        </Carte>
+
+        <Carte orientation="-150deg">
+          <span className="text-[50px]">+10000</span>
+          <span className="text-[23px]">
+            <span className="text-init">emploie</span> créer au pays
+          </span>
+        </Carte>
+
+        <Carte>
+          <span className="text-[50px]">+1 M</span>
+          <span className="text-[23px]">
+            abonnées sur <span className="text-init">les réseaux</span>
+          </span>
+        </Carte>
+      </section>
+
     </div>
   );
 }

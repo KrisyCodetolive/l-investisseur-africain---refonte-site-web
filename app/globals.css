@@ -42,7 +42,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-tag:#895E41;
-  --color-init: #FEC802;
+  --color-init: #EAB800;
 }
 
 
