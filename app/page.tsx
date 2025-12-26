@@ -5,6 +5,12 @@ import Btn from "../components/CTAbtn";
 import { gsap } from "gsap";
 import SplitText from "../components/SplitText";
 import Carte from "@/components/Carte";
+import SecondBtn from "@/components/SecondBtn";
+import Enum from "@/components/Enum";
+import Tags from "@/components/Tag";
+import Obj from "@/components/Obj";
+import Obj01 from "@/components/Obj01";
+
 
 export default function Home() {
   const bgRef = useRef(null);
@@ -75,6 +81,7 @@ export default function Home() {
 
   return (
     <div className={`text-4xl flex flex-col text-white w-full h-full bg-black`}>
+
       {/* heroHeader */}
       <section className="w-full h-[1000px] relative ">
         {/* <video
@@ -126,19 +133,7 @@ export default function Home() {
 
               </ul>
             </div>
-            <div className="h-full  flex items-center">
-              <div
-                ref={btnRef}
-                className="flex text-[16px] translate-x-[-170px] gap-2 items-center ${h} h-14 p-3  rounded-[55px] cursor-pointer btn"
-                style={{
-                  background:
-                    "linear-gradient(-17deg , rgba(44,44,44,100%) 0% , rgba(254,200,2,30%) 100% )",
-                }}
-              >
-                <img src="/assets/icone.png" alt="icone" className="w-[20px]" />
-                feux de camp
-              </div>
-            </div>
+           <SecondBtn title={"feux de camps"} ref={btnRef} property="h-full flex items-center" Class="translate-x-[-170px]"/>
           </header>
           <div className="flex flex-col gap-[2px] w-full items-center">
             <span className={`${j.className} text-[170px] m-0 `}>
@@ -198,7 +193,38 @@ export default function Home() {
           </span>
         </Carte>
       </section>
+      
+      {/* who am i */}
+      <section className="relative w-full h-[900px] mt-35 flex justify-center items-center" >
+          <div className="flex flex-col justify-center items-center p-10 gap-10">
+            <span className={`${f.className} text-[80px]`}>Qui suis-je <span className="text-init">?</span></span>
+            <span className={`${h.className} text-[25px] text-sm/8`}>
+              Je m&apos;appelle Jean-Yves Bragbo, multi-investisseur en Afrique. 
+              <br/>Ma mission :<span className="text-init"> aider la diaspora à atteindre la liberté financière en 
+              <br/>lui donnant les clés pour réussir dans le business en afrique.
+              </span> 
+            </span>
+            <SecondBtn title="mon parcours"/>
+          </div>
+          
+          <img src="/assets/p01.png" alt="photo" className="absolute right-50 top-40 w-[160px]" />
+          <img src="/assets/p02.png" alt="photo" className="absolute right-80 bottom-40 w-[140px]" />
+          <img src="/assets/p03.png" alt="photo" className="absolute left-50 bottom-70 w-[155px]" />
 
+
+      </section>
+
+      {/* target */}
+      <section className="w-full h-[500px]"> 
+          {/* <span className={`${f.className} text-[80px] text-center block mt-30`}>Mes  <span className="text-init">objectifs</span></span>
+          <div>
+
+          </div> */}
+          {/*  <Tags title={"Accompagner"}/> */}
+          {/* <Enum/> */}
+          {/* <Obj/> */}
+          <Obj01/>
+      </section>
     </div>
   );
 }

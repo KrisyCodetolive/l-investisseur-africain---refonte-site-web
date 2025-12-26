@@ -1,5 +1,19 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind utilities;
+
+@layer utilities {
+  .text-stroke-2 {
+    -webkit-text-stroke: 0.7px #FECA0D;
+    color: transparent;
+  }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+  }
+}
+
 
 @custom-variant dark (&:is(.dark *));
 
